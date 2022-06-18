@@ -15,7 +15,7 @@ function buildGrid() {
   const grid = []
   for (let week = 0; week < 7; week++) {
     for (let day = 0; day < 20; day++) {
-      grid.push(<div className='DayEventsGridItem'></div>)
+      grid.push(<div key={`${day} ${week}`} className='DayEventsGridItem'></div>)
     }
   }
   return grid
