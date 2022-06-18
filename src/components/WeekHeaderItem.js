@@ -9,13 +9,10 @@ export function WeekHeaderItem({week}) {
   const dayOfMonth = d.getDate()
   const weekDays = getWeekDays(dayOfWeek, dayOfMonth)
 
-  function getWeekDays(d, dm) {
+  function getWeekDays() {
     const w = []
-    for (let i = 6; i > d; i--) {
-      w.push(dm - i)
-    }
-    for (let i = d; i >= 0; i--) {
-      w.push(dm - i)
+    for (let i = 0; i < 7; i++) {
+      w.push(dayOfMonth + (i - dayOfWeek))
     }
     return w
   }
