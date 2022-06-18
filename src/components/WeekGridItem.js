@@ -5,15 +5,16 @@ export function WeekGridItem({week, hour}) {
 
   const d = new Date()
   const dayOfWeek = d.getDay()
-  const currentHour = d.getHours()
+  // const currentHour = d.getHours()
   const [currentMinutes, setCurrentMinutes] = useState(d.getMinutes())
+  const [currentHour, setCurrentHour] = useState(d.getHours())
 
   useEffect(() => {
     setInterval(() => {
       const d = new Date()
       setCurrentMinutes(d.getMinutes())
-      console.log(d.getMinutes())
-    }, 2000)
+      setCurrentHour(d.getHours())
+    }, 5000)
   }, [])
 
   return (
