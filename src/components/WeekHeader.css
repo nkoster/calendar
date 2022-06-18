@@ -1,0 +1,11 @@
+.WeekHeader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 4.5rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    margin: 0 .5rem;
+}
