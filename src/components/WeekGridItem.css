@@ -1,4 +1,5 @@
 .ItemDayEvents {
+    position: relative;
     background-color: white;
 }
 
@@ -9,5 +10,22 @@
 }
 
 .ItemCurrent {
+    position: relative;
     background-color: white;
+}
+
+.ItemCurrenTime {
+    background-color: blueviolet;
+    color: white;
+}
+
+.ItemCurrenTimeLine {
+    position: absolute;
+    left: 4rem;
+    right: 2rem;
+    top: 50%;
+    background-color: white;
+    /*width: 100%;*/
+    height: 2px;
+    /*border: solid 1px red;*/
 }
