@@ -1,0 +1,9 @@
+.ContainerMonth {
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+    width: var(--left-width);
+    height: 18rem;
+    background-color: darkseagreen;
+    border-radius: var(--main-border-radius);
+}
