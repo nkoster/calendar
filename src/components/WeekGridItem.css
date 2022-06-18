@@ -1,0 +1,9 @@
+.ItemDayEvents {
+    background: white;
+}
+
+.ItemHour {
+    background: white;
+    padding: .2rem;
+    color: silver;
+}

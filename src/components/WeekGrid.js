@@ -1,4 +1,5 @@
 import './WeekGrid.css'
+import {WeekGridItem} from './WeekGridItem'
 
 export function WeekGrid() {
   return (
@@ -15,9 +16,7 @@ function buildGrid() {
   for (let hour = 0; hour < 24; hour++) {
     for (let week = 0; week < 7; week++) {
       grid.push(
-        <div key={`${hour} ${week}`} className='ItemDayEvents ItemHour'>
-          {`${hour.toString().padStart(2, '0')}:00`}
-        </div>
+        <WeekGridItem key={`${hour} ${week}`} hour={hour}/>
       )
     }
   }

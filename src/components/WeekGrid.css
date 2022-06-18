@@ -1,11 +1,7 @@
 .WeekScroller {
     position: relative;
-
     left: 0;
-    /*top: 16rem;*/
     right: 0;
-    /*bottom: 0;*/
-    /*height: fi;*/
     margin: .2rem .4rem .4rem .4rem;
     overflow: scroll;
 }
@@ -16,15 +12,4 @@
     grid-template-rows: repeat(24, auto);
     height: 1400px;
     gap: 1px;
-    /*padding-top: .5rem;*/
-}
-
-.ItemDayEvents {
-    background: white;
-}
-
-.ItemHour {
-    background: white;
-    padding: .2rem;
-    color: silver;
 }
