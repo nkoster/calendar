@@ -1,10 +1,20 @@
 import './WeekGridItem.css'
+import {useEffect, useState} from 'react'
 
 export function WeekGridItem({week, hour}) {
+
   const d = new Date()
   const dayOfWeek = d.getDay()
   const currentHour = d.getHours()
-  const currentMinutes = d.getMinutes()
+  const [currentMinutes, setCurrentMinutes] = useState(d.getMinutes())
+
+  useEffect(() => {
+    setInterval(() => {
+      const d = new Date()
+      setCurrentMinutes(d.getMinutes())
+      console.log(d.getMinutes())
+    }, 2000)
+  }, [])
 
   return (
     <div className={`ItemDayEvents ItemHour ${
