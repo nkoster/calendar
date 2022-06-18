@@ -14,9 +14,11 @@ function buildGrid() {
   const grid = []
   for (let hour = 0; hour < 24; hour++) {
     for (let week = 0; week < 7; week++) {
-      // const text = document.createTextNode(`${hour.toString().padStart(2, '0')}:00`)
-      // item.classList.add('item-hour')
-      grid.push(<div key={`${hour} ${week}`} className='ItemDayEvents ItemHour'>{`${hour.toString().padStart(2, '0')}:00`}</div>)
+      grid.push(
+        <div key={`${hour} ${week}`} className='ItemDayEvents ItemHour'>
+          {`${hour.toString().padStart(2, '0')}:00`}
+        </div>
+      )
     }
   }
   return grid
