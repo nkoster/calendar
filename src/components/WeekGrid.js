@@ -16,7 +16,7 @@ function buildGrid() {
   for (let hour = 0; hour < 24; hour++) {
     for (let week = 0; week < 7; week++) {
       grid.push(
-        <WeekGridItem key={`${hour} ${week}`} hour={hour}/>
+        <WeekGridItem key={`${hour} ${week}`} week={week} hour={hour}/>
       )
     }
   }

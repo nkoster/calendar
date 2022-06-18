@@ -1,9 +1,13 @@
 .ItemDayEvents {
-    background: white;
+    background-color: white;
 }
 
 .ItemHour {
-    background: white;
+    background-color: #f9f9f9;
     padding: .2rem;
     color: silver;
+}
+
+.ItemCurrent {
+    background-color: white;
 }
