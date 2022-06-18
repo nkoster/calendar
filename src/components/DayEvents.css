@@ -16,5 +16,9 @@
 }
 
 .DayEventsGridItem {
+    background-color: #f9f9f9;
+}
+
+.DayCurrent {
     background-color: white;
 }
