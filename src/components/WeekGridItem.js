@@ -5,7 +5,6 @@ export function WeekGridItem({week, hour}) {
 
   const d = new Date()
   const dayOfWeek = d.getDay()
-  // const currentHour = d.getHours()
   const [currentMinutes, setCurrentMinutes] = useState(d.getMinutes())
   const [currentHour, setCurrentHour] = useState(d.getHours())
 
