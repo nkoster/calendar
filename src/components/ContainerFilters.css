@@ -1,0 +1,9 @@
+.ContainerFilters {
+    position: absolute;
+    left: .5rem;
+    top: 19rem;
+    width: var(--left-width);
+    bottom: .5rem;
+    background-color: springgreen;
+    border-radius: var(--main-border-radius);
+}
