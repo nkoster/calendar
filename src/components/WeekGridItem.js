@@ -6,8 +6,6 @@ export function WeekGridItem({week, hour}) {
   const currentHour = d.getHours()
   const currentMinutes = d.getMinutes()
 
-  console.log(currentMinutes)
-
   return (
     <div className={`ItemDayEvents ItemHour ${
       dayOfWeek === week ? 'ItemCurrent' : ''
@@ -20,7 +18,7 @@ export function WeekGridItem({week, hour}) {
           position: 'absolute',
           left: '0',
           right: '0',
-          top: `${Math.floor(currentMinutes/60*100)}%`,
+          top: `${Math.floor(currentMinutes / 60 * 100)}%`,
           height: '1px',
           borderBottom: 'dashed 1px white'
         }}>
