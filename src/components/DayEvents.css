@@ -1,0 +1,20 @@
+.DayEventsScroller {
+    position: absolute;
+    left: 0;
+    top: 4.5rem;
+    right: 0;
+    height: 11rem;
+    margin: .5rem;
+    overflow: scroll;
+}
+
+.DayEventsGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(20, 1.3rem);
+    gap: 1px 1px;
+}
+
+.DayEventsGridItem {
+    background-color: white;
+}
