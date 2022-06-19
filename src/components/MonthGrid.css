@@ -13,16 +13,20 @@
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 1px;
-    margin: .5rem;
+    margin: .4rem;
 }
 
 .MonthGridHeaderItem {
-    color: black;
+    color: forestgreen;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     font-size: smaller;
+}
+
+.MonthGridHeaderItemToday {
+    color: black;
 }
 
 .MonthGridItem {

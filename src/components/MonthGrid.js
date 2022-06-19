@@ -1,10 +1,14 @@
 import './MonthGrid.css'
 
 export function MonthGrid() {
+  const today = new Date().getDay()
   return (
     <>
       <div className='MonthGridHeader'>
-        {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(day => <div key={day} className='MonthGridHeaderItem'>{day}</div> )}
+        {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+          .map((day, i) => <div key={day} className={
+            `MonthGridHeaderItem ${i === today ? 'MonthGridHeaderItemToday' : ''}`
+          }>{day}</div> )}
       </div>
       <div className='MonthGrid'>
         {buildGrid()}
