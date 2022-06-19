@@ -16,14 +16,22 @@
     margin: .5rem;
 }
 
-.MonthGridItem {
-    background-color: #e0e0e0;
+.MonthGridHeaderItem {
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2rem;
     text-transform: uppercase;
+    font-size: smaller;
+}
+
+.MonthGridItem {
+    background-color: #fafafa;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
     font-size: smaller;
 }
 
