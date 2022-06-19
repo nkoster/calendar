@@ -1,5 +1,5 @@
 import './WeekGridItem.css'
-import {useEffect, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 export function WeekGridItem({week, hour}) {
 
@@ -7,6 +7,7 @@ export function WeekGridItem({week, hour}) {
   const dayOfWeek = d.getDay()
   const [currentMinutes, setCurrentMinutes] = useState(d.getMinutes())
   const [currentHour, setCurrentHour] = useState(d.getHours())
+  const focus = useRef()
 
   useEffect(() => {
     setInterval(() => {
@@ -14,6 +15,9 @@ export function WeekGridItem({week, hour}) {
       setCurrentMinutes(d.getMinutes())
       setCurrentHour(d.getHours())
     }, 5000)
+    setTimeout(() => {
+      focus.current?.scrollIntoView({behavior:'smooth'})
+    }, 500)
   }, [])
 
   return (
@@ -24,7 +28,7 @@ export function WeekGridItem({week, hour}) {
     }`}>
       {`${hour.toString().padStart(2, '0')}:00`}
       {dayOfWeek === week && currentHour === hour ?
-        <div style={{
+        <div ref={focus} style={{
           position: 'absolute',
           left: '0',
           right: '0',
