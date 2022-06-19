@@ -1,13 +1,23 @@
 import './MonthGrid.css'
+import {useEffect, useState} from 'react'
 
 export function MonthGrid() {
+
   const today = new Date().getDay()
+  const [showDay, setShowDay] = useState(today)
+
+  useEffect(() => {
+    setInterval(() => {
+      setShowDay(new Date().getDay())
+    }, 2000)
+  }, [])
+
   return (
     <>
       <div className='MonthGridHeader'>
         {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
           .map((day, i) => <div key={day} className={
-            `MonthGridHeaderItem ${i === today ? 'MonthGridHeaderItemToday' : ''}`
+            `MonthGridHeaderItem ${i === showDay ? 'MonthGridHeaderItemToday' : ''}`
           }>{day}</div> )}
       </div>
       <div className='MonthGrid'>
