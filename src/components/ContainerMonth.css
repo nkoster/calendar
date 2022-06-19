@@ -3,7 +3,7 @@
     left: .5rem;
     top: .5rem;
     width: var(--left-width);
-    min-height: 17rem;
+    height: 16rem;
     background-color: lightgreen;
     border-radius: var(--main-border-radius);
     display: flex;
