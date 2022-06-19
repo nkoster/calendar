@@ -4,7 +4,7 @@ export function MonthGrid() {
   return (
     <>
       <div className='MonthGridHeader'>
-        {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(day => <div key={day} className='MonthGridItem'>{day}</div> )}
+        {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'].map(day => <div key={day} className='MonthGridHeaderItem'>{day}</div> )}
       </div>
       <div className='MonthGrid'>
         {buildGrid()}
