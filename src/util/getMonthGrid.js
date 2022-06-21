@@ -1,30 +1,35 @@
 export function getMonthGrid(someDay) {
-  const gridData = []
+
   const date = new Date(someDay)
   const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const daysInMonth = getDaysInMonth(year, month, 0)
-  const firstDay = new Date(year, month, 0).getDay()
-  const daysInPrevMonth = new Date(year, month-1, 0).getDate()
-  let count = 0
-  for (let day = 0; day < firstDay-1; day++) {
-    count++
-    gridData.push(daysInPrevMonth-(firstDay-day)+2)
+  const month = date.getMonth()
+
+// test if we need to correct the tome zone offet
+  const correction = new Date(2022, 1, 0).getDate() === 31 ? 1 : 0
+  const daysInMonth = new Date(year, month + correction, 0).getDate()
+  const daysInPrevMonth = new Date(year, month - 1 + correction, 0).getDate()
+  const firstDay = new Date(year, month).getDay()
+
+  const grid = []
+
+  for (let i = 0; i < firstDay; i++) {
+    grid.push(daysInPrevMonth - firstDay + i + 1)
   }
-  for (let day = 0; day < daysInMonth; day++) {
-    count++
-    gridData.push(day+1)
+
+  for (let i = 0; i < daysInMonth; i++) {
+    grid.push(i + 1)
   }
-  for (let day = 0; day < 7*6-count; day ++) {
-    gridData.push(day+1)
+
+  const currentTotal = grid.length
+  for (let i = 0; i < (7*6) - currentTotal; i++) {
+    grid.push(i + 1)
   }
+
   const weeks = []
   for (let i = 0; i < 6; i++) {
-    weeks.push(gridData.slice(i * 7, i * 7 + 7))
+    weeks.push(grid.slice(i * 7, i * 7 + 7))
   }
-  return weeks
-}
 
-function getDaysInMonth(year, month) {
-  return new Date(year, month, 0).getDate()
+  return weeks
+
 }
