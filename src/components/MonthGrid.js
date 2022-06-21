@@ -3,11 +3,13 @@ import {getMonthGrid} from '../util/getMonthGrid'
 
 import {useEffect, useState} from 'react'
 
-export function MonthGrid() {
+export function MonthGrid({timestamp}) {
 
-  const currentDate = new Date()
+  const currentDate = new Date(timestamp)
   const today = currentDate.getDay()
   const [showDay, setShowDay] = useState(today)
+
+  const isToday = new Date().toDateString() === new Date(timestamp).toDateString()
 
   useEffect(() => {
     setInterval(() => {
@@ -20,7 +22,7 @@ export function MonthGrid() {
       <div className='MonthGridHeader'>
         {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
           .map((day, i) => <div key={day} className={
-            `MonthGridHeaderItem ${i === showDay ? 'MonthGridHeaderItemToday' : ''}`
+            `MonthGridHeaderItem ${i === showDay && isToday? 'MonthGridHeaderItemToday' : ''}`
           }>{day}</div> )}
       </div>
       <div className='MonthGrid'>
