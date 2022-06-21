@@ -1,26 +1,23 @@
 import './WeekHeaderItem.css'
+import {getMonthGrid} from '../util/getMonthGrid'
 
-export function WeekHeaderItem({week}) {
+export function WeekHeaderItem({timestamp, week}) {
 
   const weekMap = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
-  const d = new Date()
-  const dayOfWeek = d.getDay()
-  const dayOfMonth = d.getDate()
-  const weekDays = getWeekDays(dayOfWeek, dayOfMonth)
+  const grid = getMonthGrid(timestamp)
 
-  function getWeekDays() {
-    const w = []
-    for (let i = 0; i < 7; i++) {
-      w.push(dayOfMonth + (i - dayOfWeek))
-    }
-    return w
-  }
+  const weekDays = grid.filter(week => {
+    return week.includes(new Date(timestamp).getDate())
+  })
+
+  const isToday = new Date().getDay() === week &&
+    new Date().toDateString() === new Date(timestamp).toDateString()
 
   return (
     <div className='WeekHeaderItem'>
-      <div className={`WeekHeaderItemWeek ${dayOfWeek === week && 'Today'}`}>{weekMap[week]}</div>
-      <div className={`WeekHeaderItemDay ${dayOfWeek === week && 'TodayBox'}`}>{weekDays[week]}</div>
+      <div className={`WeekHeaderItemWeek ${isToday && 'Today'}`}>{weekMap[week]}</div>
+      <div className={`WeekHeaderItemDay ${isToday && 'TodayBox'}`}>{weekDays[0][week]}</div>
     </div>
   )
 }
