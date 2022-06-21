@@ -8,7 +8,7 @@ export function ContainerWeek({timestamp}) {
     <div className='ContainerWeek'>
       <WeekHeader timestamp={timestamp}/>
       <DayEvents timestamp={timestamp}/>
-      <WeekGrid date={new Date(timestamp).toDateString()}/>
+      <WeekGrid timestamp={timestamp}/>
     </div>
   )
 }
