@@ -4,7 +4,7 @@
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 1px;
-    margin: 1.4rem .5rem .5rem .5rem;
+    margin: .9rem .5rem .5rem .5rem;
 }
 
 .MonthGrid {

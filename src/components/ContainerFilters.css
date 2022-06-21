@@ -1,7 +1,7 @@
 .ContainerFilters {
     position: absolute;
     left: .5rem;
-    top: 17rem;
+    top: 16.5rem;
     width: var(--left-width);
     bottom: .5rem;
     background-color: lightgreen;
