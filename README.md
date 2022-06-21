@@ -2,4 +2,4 @@ A simple calendar layout, in React. Extremely WIP.
 
 <img src="https://raw.githubusercontent.com/nkoster/calendar/master/wip.png" width="800" alt="Example">
 
-You can provide an arbitrary date tp the ContainerMain component. The calendar adjusts accordingly.
+You can provide an arbitrary date to the ContainerMain component. The calendar adjusts accordingly.
