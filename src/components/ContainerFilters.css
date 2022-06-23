@@ -4,6 +4,6 @@
     top: 16.5rem;
     width: var(--left-width);
     bottom: .5rem;
-    background-color: lightgreen;
+    background-color: var(--main-background-color);
     border-radius: var(--main-border-radius);
 }

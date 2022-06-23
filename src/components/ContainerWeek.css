@@ -4,7 +4,7 @@
     top: .5rem;
     bottom: .5rem;
     right: .5rem;
-    background-color: lightgreen;
+    background-color: var(--main-background-color);
     border-radius: var(--main-border-radius);
     /*overflow: scroll;*/
     display: flex;
