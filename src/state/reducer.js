@@ -1,9 +1,8 @@
 export const initialState = {
-  timestamp: new Date().toDateString()
+  timestamp: new Date().toString()
 }
 
 export const StateReducer = (state = initialState, action) => {
-  console.log('DISPATCH', action.type)
   switch (action.type) {
     case 'updateTimestamp':
       return {
