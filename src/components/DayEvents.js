@@ -1,7 +1,8 @@
 import './DayEvents.css'
+import {State} from '../state'
 
-export function DayEvents({timestamp}) {
-
+export function DayEvents() {
+  const {timestamp} = State()
   return (
     <div className={`DayEventsScroller`}>
       <div className={`DayEventsGrid`}>
