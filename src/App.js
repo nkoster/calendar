@@ -1,10 +1,13 @@
 import './App.css'
 import {ContainerMain} from './components/ContainerMain'
+import {StateProvider} from './state'
 
 function App() {
   return (
     <div className='App'>
-      <ContainerMain />
+      <StateProvider>
+        <ContainerMain />
+      </StateProvider>
     </div>
     )
 }
