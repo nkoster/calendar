@@ -41,13 +41,17 @@ function buildGrid(d) {
   const month = date.getMonth() + 1
 
   const gridData = getMonthGrid(date)
+
+  let count = 0
+
   gridData.forEach((week) => {
     week.forEach(day => {
+      count++
       const today = new Date()
       const timestamp = `${year}/${month}/${day}`
       const other = new Date(timestamp)
       const isToday = today.toDateString() === other.toDateString()
-      grid.push(<div className={`MonthGridItem ${isToday ? 'IsToday' : ''}`} key={`${week+day}`}>{day}</div>)
+      grid.push(<div className={`MonthGridItem ${isToday ? 'IsToday' : ''}`} key={count}>{day}</div>)
     })
   })
 
