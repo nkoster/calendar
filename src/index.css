@@ -4,6 +4,7 @@
   --main-background-color: #bbd4b0;
   --header-hight: 2rem;
   --month-height: 15.5rem;
+  --default-text-color: forestgreen;
 }
 
 * {
