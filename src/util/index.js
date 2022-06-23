@@ -6,3 +6,27 @@ export function getWeekNumber(timestamp) {
 }
 
 export const isToday = timestamp => new Date().toDateString() === new Date(timestamp).toDateString()
+
+export const oneYearAgo = timestamp => {
+  const date = new Date(timestamp)
+  date.setFullYear(date.getFullYear() - 1)
+  return date.toDateString()
+}
+
+export const oneYearAhead = timestamp => {
+  const date = new Date(timestamp)
+  date.setFullYear(date.getFullYear() + 1)
+  return date.toDateString()
+}
+
+export const oneMonthAgo = timestamp => {
+  const date = new Date(timestamp)
+  date.setMonth(date.getMonth() - 1)
+  return date.toDateString()
+}
+
+export const oneMonthAhead = timestamp => {
+  const date = new Date(timestamp)
+  date.setMonth(date.getMonth() + 1)
+  return date.toDateString()
+}
