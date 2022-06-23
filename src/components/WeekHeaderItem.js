@@ -1,6 +1,7 @@
 import './WeekHeaderItem.css'
 import {getMonthGrid} from '../util/getMonthGrid'
 import {State} from '../state'
+import {isToday} from '../util'
 
 export function WeekHeaderItem({week}) {
 
@@ -13,13 +14,12 @@ export function WeekHeaderItem({week}) {
     return week.includes(new Date(timestamp).getDate())
   })
 
-  const isToday = new Date().getDay() === week &&
-    new Date().toDateString() === new Date(timestamp).toDateString()
+  const showToday = isToday(timestamp) && new Date().getDay() === week
 
   return (
     <div className='WeekHeaderItem'>
-      <div className={`WeekHeaderItemWeek ${isToday && 'Today'}`}>{weekMap[week]}</div>
-      <div className={`WeekHeaderItemDay ${isToday && 'TodayBox'}`}>{weekDays[0][week]}</div>
+      <div className={`WeekHeaderItemWeek ${showToday && 'Today'}`}>{weekMap[week]}</div>
+      <div className={`WeekHeaderItemDay ${showToday && 'TodayBox'}`}>{weekDays[0][week]}</div>
     </div>
   )
 }
