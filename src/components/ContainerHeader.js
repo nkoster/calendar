@@ -20,9 +20,7 @@ const LeftButtonMonth = () => {
   return (
     <div
       className='Buttons'
-      onClick={() => updateTimestamp(dispatch, oneMonthAgo(timestamp))}>
-      {'\u2190'}
-    </div>
+      onClick={() => updateTimestamp(dispatch, oneMonthAgo(timestamp))}>-</div>
   )
 }
 
@@ -32,9 +30,7 @@ const RightButtonMonth = () => {
   return (
     <div
       className='Buttons'
-      onClick={() => updateTimestamp(dispatch, oneMonthAhead(timestamp))}>
-      {'\u2192'}
-    </div>
+      onClick={() => updateTimestamp(dispatch, oneMonthAhead(timestamp))}>+</div>
   )
 }
 
@@ -44,9 +40,7 @@ const LeftButtonYear = () => {
   return (
     <div
       className='Buttons'
-      onClick={() => updateTimestamp(dispatch, oneYearAgo(timestamp))}>
-      {'\u2190'}
-    </div>
+      onClick={() => updateTimestamp(dispatch, oneYearAgo(timestamp))}>-</div>
   )
 }
 
@@ -56,9 +50,7 @@ const RightButtonYear = () => {
   return (
     <div
       className='Buttons'
-      onClick={() => updateTimestamp(dispatch, oneYearAhead(timestamp))}>
-      {'\u2192'}
-    </div>
+      onClick={() => updateTimestamp(dispatch, oneYearAhead(timestamp))}>+</div>
   )
 }
 
@@ -68,9 +60,7 @@ const LeftButtonWeek = () => {
   return (
     <div
       className='Buttons'
-      onClick={() => updateTimestamp(dispatch, oneWeekAgo(timestamp))}>
-      {'\u2190'}
-    </div>
+      onClick={() => updateTimestamp(dispatch, oneWeekAgo(timestamp))}>-</div>
   )
 }
 
@@ -80,9 +70,7 @@ const RightButtonWeek = () => {
   return (
     <div
       className='Buttons'
-      onClick={() => updateTimestamp(dispatch, oneWeekAhead(timestamp))}>
-      {'\u2192'}
-    </div>
+      onClick={() => updateTimestamp(dispatch, oneWeekAhead(timestamp))}>+</div>
   )
 }
 
@@ -104,7 +92,7 @@ export function ContainerHeader() {
     <div className='ContainerHeader'>
       <div className='ContainerHeaderLeft'>
         <LeftButtonMonth /> &nbsp; {monthTable[month]} &nbsp; <RightButtonMonth />
-        <Spacer /><Spacer />
+        <Spacer /><Spacer /><Spacer />
         <LeftButtonYear /> &nbsp; {year} &nbsp; <RightButtonYear />
       </div>
       <div className='ContainerHeaderRight'>
