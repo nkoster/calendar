@@ -1,0 +1,27 @@
+.ContainerHeader {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: var(--header-hight);
+    background-color: var(--main-background-color);
+    border-bottom-left-radius: var(--main-border-radius);
+    border-bottom-right-radius: var(--main-border-radius);
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: var(--left-width) 1fr;
+    margin: 0 .5rem 0 .5rem;
+}
+
+.ContainerHeaderLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContainerHeaderRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
