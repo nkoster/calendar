@@ -1,7 +1,7 @@
 .ContainerFilters {
     position: absolute;
     left: .5rem;
-    top: 16.5rem;
+    top: calc(var(--month-height) + var(--header-hight) + 1rem);
     width: var(--left-width);
     bottom: .5rem;
     background-color: var(--main-background-color);

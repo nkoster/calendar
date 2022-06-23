@@ -1,7 +1,7 @@
 .ContainerWeek {
     position: absolute;
     left: calc(var(--left-width) + 1rem);
-    top: .5rem;
+    top: calc(var(--header-hight) + .5rem);
     bottom: .5rem;
     right: .5rem;
     background-color: var(--main-background-color);

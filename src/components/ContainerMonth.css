@@ -1,9 +1,9 @@
 .ContainerMonth {
     position: absolute;
     left: .5rem;
-    top: .5rem;
+    top: calc(var(--header-hight) + .5rem);
     width: var(--left-width);
-    height: 15.5rem;
+    height: var(--month-height);
     background-color: var(--main-background-color);
     border-radius: var(--main-border-radius);
     display: flex;
