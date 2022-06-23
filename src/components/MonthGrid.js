@@ -44,7 +44,7 @@ function buildGrid(d) {
 
   let count = 0
 
-  gridData.forEach((week) => {
+  gridData.forEach(week => {
     week.forEach(day => {
       count++
       const today = new Date()
