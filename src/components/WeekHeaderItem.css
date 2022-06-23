@@ -9,11 +9,11 @@
 
 .WeekHeaderItemWeek {
     font-size: .8rem;
-    color: forestgreen;
+    color: var(--default-text-color);
 }
 
 .WeekHeaderItemDay {
-    color: forestgreen;
+    color: var(--default-text-color);
     font-size: 1.6rem;
     padding: 0 3px 0 3px;
 }
