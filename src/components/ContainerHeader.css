@@ -31,10 +31,16 @@
 
 .Buttons {
     cursor: pointer;
+    background-color: white;
+    width: 1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Spacer {
     position: relative;
     height: 1px;
-    width: 2rem;
+    width: 1rem;
 }
