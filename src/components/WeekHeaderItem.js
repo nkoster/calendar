@@ -1,10 +1,12 @@
 import './WeekHeaderItem.css'
 import {getMonthGrid} from '../util/getMonthGrid'
+import {State} from '../state'
 
-export function WeekHeaderItem({timestamp, week}) {
+export function WeekHeaderItem({week}) {
 
   const weekMap = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
+  const {timestamp} = State()
   const grid = getMonthGrid(timestamp)
 
   const weekDays = grid.filter(week => {

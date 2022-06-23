@@ -3,12 +3,12 @@ import {WeekHeader} from './WeekHeader'
 import {DayEvents} from './DayEvents'
 import {WeekGrid} from './WeekGrid'
 
-export function ContainerWeek({timestamp}) {
+export function ContainerWeek() {
   return (
     <div className='ContainerWeek'>
-      <WeekHeader timestamp={timestamp}/>
-      <DayEvents timestamp={timestamp}/>
-      <WeekGrid timestamp={timestamp}/>
+      <WeekHeader />
+      <DayEvents />
+      <WeekGrid />
     </div>
   )
 }

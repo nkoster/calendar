@@ -1,10 +1,10 @@
 import './ContainerMonth.css'
 import {MonthGrid} from './MonthGrid'
 
-export function ContainerMonth({timestamp}) {
+export function ContainerMonth() {
   return (
     <div className='ContainerMonth'>
-      <MonthGrid timestamp={timestamp}/>
+      <MonthGrid />
     </div>
   )
 }

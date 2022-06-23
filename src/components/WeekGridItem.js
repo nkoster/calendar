@@ -1,11 +1,15 @@
 import './WeekGridItem.css'
 import {useEffect, useRef, useState} from 'react'
 import {getMonthGrid} from '../util/getMonthGrid'
+import {State} from '../state'
 
-export function WeekGridItem({timestamp, week, hour}) {
+export function WeekGridItem({week, hour}) {
 
   const monthTable = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+  const {timestamp} = State()
   const grid = getMonthGrid(timestamp)
+
   const weekDays = grid.filter(week => {
     return week.includes(new Date(timestamp).getDate())
   })

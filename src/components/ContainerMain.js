@@ -3,13 +3,11 @@ import {ContainerFilters} from './ContainerFilters'
 import {ContainerWeek} from './ContainerWeek'
 
 export function ContainerMain() {
-  const timestamp = new Date().toDateString()
-  console.log(timestamp)
   return (
     <div className='ContainerMain'>
-      <ContainerMonth timestamp={timestamp}/>
+      <ContainerMonth />
       <ContainerFilters />
-      <ContainerWeek timestamp={timestamp}/>
+      <ContainerWeek />
     </div>
   )
 }

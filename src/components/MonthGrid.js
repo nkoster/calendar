@@ -1,10 +1,11 @@
+import {useEffect, useState} from 'react'
 import './MonthGrid.css'
 import {getMonthGrid} from '../util/getMonthGrid'
+import {State} from '../state'
 
-import {useEffect, useState} from 'react'
+export function MonthGrid() {
 
-export function MonthGrid({timestamp}) {
-
+  const {timestamp} = State()
   const currentDate = new Date(timestamp)
   const today = currentDate.getDay()
   const [showDay, setShowDay] = useState(today)
