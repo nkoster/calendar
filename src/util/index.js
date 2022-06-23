@@ -30,3 +30,13 @@ export const oneMonthAhead = timestamp => {
   date.setMonth(date.getMonth() + 1)
   return date.toDateString()
 }
+
+export const oneWeekAgo = timestamp => {
+  const date = new Date(timestamp)
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate() - 7).toDateString()
+}
+
+export const oneWeekAhead = timestamp => {
+  const date = new Date(timestamp)
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7).toDateString()
+}
