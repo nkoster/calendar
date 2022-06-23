@@ -12,6 +12,9 @@
     gap: .5rem;
     grid-template-columns: var(--left-width) 1fr;
     margin: 0 .5rem 0 .5rem;
+    color: var(--default-text-color);
+    font-size: smaller;
+    font-weight: bold;
 }
 
 .ContainerHeaderLeft {
@@ -24,4 +27,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Buttons {
+    cursor: pointer;
+}
+
+.Spacer {
+    position: relative;
+    height: 1px;
+    width: 2rem;
 }
