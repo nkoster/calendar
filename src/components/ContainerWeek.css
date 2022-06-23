@@ -6,7 +6,6 @@
     right: .5rem;
     background-color: var(--main-background-color);
     border-radius: var(--main-border-radius);
-    /*overflow: scroll;*/
     display: flex;
     flex-direction: column;
 }
