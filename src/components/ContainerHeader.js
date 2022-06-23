@@ -1,6 +1,9 @@
 import './ContainerHeader.css'
 import {State, StateDispatch, updateTimestamp} from '../state'
-import {getWeekNumber, isToday, oneYearAgo, oneYearAhead, oneMonthAgo, oneMonthAhead} from '../util'
+import {
+  getWeekNumber, isToday, oneYearAgo, oneYearAhead,
+  oneMonthAgo, oneMonthAhead, oneWeekAgo, oneWeekAhead
+} from '../util'
 
 const monthTable = [
   'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY',
@@ -59,6 +62,30 @@ const RightButtonYear = () => {
   )
 }
 
+const LeftButtonWeek = () => {
+  const dispatch = StateDispatch()
+  const {timestamp} = State()
+  return (
+    <div
+      className='Buttons'
+      onClick={() => updateTimestamp(dispatch, oneWeekAgo(timestamp))}>
+      {'\u2190'}
+    </div>
+  )
+}
+
+const RightButtonWeek = () => {
+  const dispatch = StateDispatch()
+  const {timestamp} = State()
+  return (
+    <div
+      className='Buttons'
+      onClick={() => updateTimestamp(dispatch, oneWeekAhead(timestamp))}>
+      {'\u2192'}
+    </div>
+  )
+}
+
 const Spacer = () => {
   return <div className='Spacer'></div>
 }
@@ -76,13 +103,16 @@ export function ContainerHeader() {
   return (
     <div className='ContainerHeader'>
       <div className='ContainerHeaderLeft'>
-        <LeftButtonMonth />{monthTable[month]}<RightButtonMonth />
-        <Spacer />
-        <LeftButtonYear />{year}<RightButtonYear />
+        <LeftButtonMonth /> &nbsp; {monthTable[month]} &nbsp; <RightButtonMonth />
+        <Spacer /><Spacer />
+        <LeftButtonYear /> &nbsp; {year} &nbsp; <RightButtonYear />
       </div>
-      <div className='ContainerHeaderRight'>{isToday(timestamp) &&
+      <div className='ContainerHeaderRight'>
+        <LeftButtonWeek /><Spacer />
+        {isToday(timestamp) &&
         <div>{weekTable[day]}, {monthTable[month]} {dayOfMonth}&nbsp;{'\u2014'}&nbsp;</div>}
-        <div>WEEK {week}</div>
+        <div>WEEK {week}, {isToday(timestamp) || monthTable[month]} {year}</div>
+        <Spacer /><RightButtonWeek />
         </div>
     </div>
   )
