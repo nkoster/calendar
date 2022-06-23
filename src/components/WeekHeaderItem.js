@@ -4,7 +4,7 @@ import {State} from '../state'
 
 export function WeekHeaderItem({week}) {
 
-  const weekMap = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+  const weekMap = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY']
 
   const {timestamp} = State()
   const grid = getMonthGrid(timestamp)
