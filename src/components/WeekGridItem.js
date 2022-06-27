@@ -35,7 +35,7 @@ export function WeekGridItem({week, hour}) {
       dayOfWeek === week && isToday(timestamp) ? 'ItemCurrent' : ''
     } ${
       dayOfWeek === week && currentHour === hour && isToday(timestamp) ? 'ItemCurrenTime' : ''
-    }`} title={`${weekDays[0][week]}, ${hour.toString().padStart(2, '0')}:00`}>
+    }`} title={`${weekDays[0][week].split(',')[0]}, ${hour.toString().padStart(2, '0')}:00`}>
       {`${hour.toString().padStart(2, '0')}:00`}
       {dayOfWeek === week && currentHour === hour && isToday?
         <div ref={focus} style={{
