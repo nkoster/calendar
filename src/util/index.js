@@ -77,8 +77,9 @@ export function getWeekNumber(timestamp) {
   const day = date.getDate()
   let count = 0
   for (let i = 0; i < grid.length; i++) {
+    if (grid[i].includes(`$Jan 4, ${year}`)) count = 0
     count++
     if (grid[i].includes(`${monthTable[month]} ${day}, ${year}`)) break
   }
-  return count
+  return count - 1
 }
