@@ -18,16 +18,16 @@ export function getMonthGrid(someDay) {
   const grid = []
 
   for (let i = 0; i < firstDay; i++) {
-    grid.push(`${month === 0 ? year-1 : year} ${month === 0 ? 'dec' : monthTable[month-1]} ${daysInPrevMonth - firstDay + i + 1}`)
+    grid.push(`${month === 0 ? 'dec' : monthTable[month-1]} ${daysInPrevMonth - firstDay + i + 1}, ${month === 0 ? year-1 : year}`)
   }
 
   for (let i = 0; i < daysInMonth; i++) {
-    grid.push(`${year} ${monthTable[month]} ${i + 1}`)
+    grid.push(`${monthTable[month]} ${i + 1}, ${year}`)
   }
 
   const currentTotal = grid.length
   for (let i = 0; i < (7*6) - currentTotal; i++) {
-    grid.push(`${month === 11 ? year+1 : year} ${month === 11 ? 'jan' : monthTable[month+1]} ${i + 1}`)
+    grid.push(`${month === 11 ? 'jan' : monthTable[month+1]} ${i + 1}, ${month === 11 ? year+1 : year}`)
   }
 
   const weeks = []

@@ -34,9 +34,9 @@ export function MonthGrid() {
     gridData.forEach(week => {
       week.forEach(day => {
         count++
-        const timestamp = `${year} ${monthTable[month]} ${day.split(' ')[2]}`
+        const timestamp = `${monthTable[month]} ${day.split(' ')[1].replace(',', '')}, ${year}`
         const isToday = dateStamp(new Date().toDateString()) === dateStamp(timestamp)
-        grid.push(<div className={`MonthGridItem ${isToday ? 'IsToday' : ''}`} key={count}>{day.split(' ')[2]}</div>)
+        grid.push(<div className={`MonthGridItem ${isToday ? 'IsToday' : ''}`} key={count}>{day.split(' ')[1].replace(',', '')}</div>)
       })
     })
 

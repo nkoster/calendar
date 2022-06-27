@@ -20,7 +20,7 @@ export function WeekHeaderItem({week}) {
   return (
     <div className='WeekHeaderItem'>
       <div className={`WeekHeaderItemWeek ${isToday(timestamp) && dayOfWeek === week && 'Today'}`}>{weekMap[week]}</div>
-      <div className={`WeekHeaderItemDay ${isToday(timestamp) && dayOfWeek === week && 'TodayBox'}`}>{weekDays[0][week].split(' ')[2]}</div>
+      <div className={`WeekHeaderItemDay ${isToday(timestamp) && dayOfWeek === week && 'TodayBox'}`}>{weekDays[0][week].split(' ')[1].replace(',','')}</div>
     </div>
   )
 }

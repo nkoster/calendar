@@ -6,17 +6,12 @@ import {isToday, dateStamp} from '../util'
 
 export function WeekGridItem({week, hour}) {
 
-  const monthTable = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
   const {timestamp} = State()
   const grid = getMonthGrid(timestamp)
 
   const weekDays = grid.filter(week => {
     return week.includes(dateStamp(timestamp))
   })
-
-  const year = new Date(timestamp).getFullYear()
-  const month = new Date(timestamp).getMonth()
 
   const d = new Date()
   const dayOfWeek = d.getDay()
@@ -40,7 +35,7 @@ export function WeekGridItem({week, hour}) {
       dayOfWeek === week && isToday(timestamp) ? 'ItemCurrent' : ''
     } ${
       dayOfWeek === week && currentHour === hour && isToday(timestamp) ? 'ItemCurrenTime' : ''
-    }`} title={`${year}, ${monthTable[month]} ${weekDays[0][week]}, ${hour.toString().padStart(2, '0')}:00`}>
+    }`} title={`${weekDays[0][week]}, ${hour.toString().padStart(2, '0')}:00`}>
       {`${hour.toString().padStart(2, '0')}:00`}
       {dayOfWeek === week && currentHour === hour && isToday?
         <div ref={focus} style={{

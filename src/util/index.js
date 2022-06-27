@@ -47,7 +47,7 @@ export function dateStamp(timestamp) {
   const year = date.getFullYear()
   const month = date.getMonth()
   const day = date.getDate()
-  return `${year} ${monthTable[month]} ${day}`
+  return `${monthTable[month]} ${day}, ${year}`
 }
 
 export function yearGrid(timestamp) {
@@ -57,7 +57,7 @@ export function yearGrid(timestamp) {
     const monthTable = [
       'jan', 'feb', 'mar', 'apr', 'may', 'jun',
       'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
-    grid.push(...getMonthGrid(`${year} ${monthTable[month]} 14`))
+    grid.push(...getMonthGrid(`${monthTable[month]} 14, ${year}`))
   }
   return grid.filter((n, i) => {
     if (JSON.stringify(n) === JSON.stringify(grid[i - 2])) return false
@@ -78,7 +78,7 @@ export function getWeekNumber(timestamp) {
   let count = 0
   for (let i = 0; i < grid.length; i++) {
     count++
-    if (grid[i].includes(`${year} ${monthTable[month]} ${day}`)) break
+    if (grid[i].includes(`${monthTable[month]} ${day}, ${year}`)) break
   }
   return count
 }
