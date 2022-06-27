@@ -19,11 +19,15 @@ export function WeekGridItem({week, hour}) {
   const [currentHour, setCurrentHour] = useState(d.getHours())
   const focus = useRef()
 
+  const today = new Date().getDay()
+  const [showDay, setShowDay] = useState(today)
+
   useEffect(() => {
     setInterval(() => {
       const d = new Date()
       setCurrentMinutes(d.getMinutes())
       setCurrentHour(d.getHours())
+      setShowDay(new Date().getDay())
     }, 5000)
     setTimeout(() => {
       focus.current?.scrollIntoView({behavior:'smooth'})
@@ -32,12 +36,12 @@ export function WeekGridItem({week, hour}) {
 
   return (
     <div className={`ItemHour ${
-      dayOfWeek === week && isToday(timestamp) ? 'ItemCurrent' : ''
+      dayOfWeek === week && isToday(timestamp) && week === showDay ? 'ItemCurrent' : ''
     } ${
-      dayOfWeek === week && currentHour === hour && isToday(timestamp) ? 'ItemCurrenTime' : ''
+      dayOfWeek === week && currentHour === hour && isToday(timestamp) && week === showDay ? 'ItemCurrenTime' : ''
     }`} title={`${weekDays[0][week].split(',')[0]}, ${hour.toString().padStart(2, '0')}:00`}>
       {`${hour.toString().padStart(2, '0')}:00`}
-      {dayOfWeek === week && currentHour === hour && isToday?
+      {dayOfWeek === week && currentHour === hour && isToday(timestamp) && week === showDay ?
         <div ref={focus} style={{
           position: 'absolute',
           left: '0',

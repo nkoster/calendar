@@ -4,6 +4,7 @@ import {
   getWeekNumber, isToday, oneYearAgo, oneYearAhead,
   oneMonthAgo, oneMonthAhead, oneWeekAgo, oneWeekAhead
 } from '../util'
+import {useEffect, useState} from 'react'
 
 const monthTable = [
   'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY',
@@ -80,6 +81,15 @@ const Spacer = () => {
 
 export function ContainerHeader() {
 
+  const today = new Date().getDay()
+  const [showDay, setShowDay] = useState(today)
+
+  useEffect(() => {
+    setInterval(() => {
+      setShowDay(new Date().getDay())
+    }, 5000)
+  }, [])
+
   const {timestamp} = State()
 
   const month = new Date(timestamp).getMonth()
@@ -99,7 +109,7 @@ export function ContainerHeader() {
         <LeftButtonWeek /><Spacer />
         {isToday(timestamp) &&
         <div>{weekTable[day]}, {monthTable[month]} {dayOfMonth}&nbsp;{'\u2014'}&nbsp;</div>}
-        <div>WEEK {week}, {isToday(timestamp) || monthTable[month]} {year}</div>
+        <div>WEEK {week}, {(isToday(timestamp) && week === showDay) || monthTable[month]} {year}</div>
         <Spacer /><RightButtonWeek />
         </div>
     </div>
