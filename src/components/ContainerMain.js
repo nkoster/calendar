@@ -9,14 +9,15 @@ import {getWeekNumber} from '../util'
 export function ContainerMain() {
 
   const weekNumber = getWeekNumber(new Date().toString())
+  const year = new Date().getFullYear()
   const {timestamp} = State()
   const dispatch = StateDispatch()
 
   useEffect(() => {
-    if (weekNumber === getWeekNumber(timestamp)) {
+    if (weekNumber === getWeekNumber(timestamp) && year === new Date(timestamp).getFullYear()) {
       updateTimestamp(dispatch, new Date().toString()).catch(err => console.log(err))
     }
-  }, [timestamp, dispatch, weekNumber])
+  }, [timestamp, dispatch, weekNumber, year])
 
   return (
     <div className='ContainerMain'>
