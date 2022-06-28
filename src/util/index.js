@@ -2,6 +2,16 @@ import {getMonthGrid} from './getMonthGrid'
 
 export const isToday = timestamp => new Date().toDateString() === new Date(timestamp).toDateString()
 
+export function monthHasToday(timestamp) {
+  const grid = getMonthGrid(timestamp)
+  const now = dateStamp(new Date().toString())
+  let hasToday = false
+  grid.forEach(g => {
+    if (g.includes(now)) hasToday = true
+  })
+  return hasToday
+}
+
 export const oneYearAgo = timestamp => {
   const date = new Date(timestamp)
   date.setFullYear(date.getFullYear() - 1)
