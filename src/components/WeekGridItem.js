@@ -1,13 +1,14 @@
 import './WeekGridItem.css'
 import {useEffect, useRef, useState} from 'react'
 import {getMonthGrid} from '../util/getMonthGrid'
-import {State} from '../state'
+import {State, StateDispatch, updateAppointment} from '../state'
 import {isToday, dateStamp} from '../util'
 
 export function WeekGridItem({week, hour}) {
 
   const {timestamp} = State()
   const grid = getMonthGrid(timestamp)
+  const year = new Date(timestamp).getFullYear()
 
   const weekDays = grid.filter(week => {
     return week.includes(dateStamp(timestamp))
@@ -34,8 +35,15 @@ export function WeekGridItem({week, hour}) {
     }, 500)
   }, [])
 
+  const dispatch = StateDispatch()
+
+  const click = e => updateAppointment(dispatch, {
+      showModal: true,
+      startTime: `${year}, ${e.target.title}`
+  })
+
   return (
-    <div className={`ItemHour ${
+    <div onClick={click} className={`ItemHour ${
       dayOfWeek === week && isToday(timestamp) && week === showDay ? 'ItemCurrent' : ''
     } ${
       dayOfWeek === week && currentHour === hour && isToday(timestamp) && week === showDay ? 'ItemCurrenTime' : ''
