@@ -2,8 +2,7 @@ import {useEffect, useState} from 'react'
 import './MonthGrid.css'
 import {getMonthGrid} from '../util/getMonthGrid'
 import {State} from '../state'
-import {dateStamp} from '../util'
-import {isToday} from '../util'
+import {dateStamp, monthHasToday} from '../util'
 
 export function MonthGrid() {
 
@@ -18,38 +17,12 @@ export function MonthGrid() {
     }, 2000)
   }, [])
 
-  function buildGrid(d) {
-
-    const grid = []
-    const date = new Date(d)
-    const year = date.getFullYear()
-    const month = date.getMonth()
-    const gridData = getMonthGrid(date)
-    let count = 0
-    const monthTable = [
-      'jan', 'feb', 'mar', 'apr', 'may', 'jun',
-      'jul', 'aug', 'sep', 'oct', 'nov', 'dec'
-    ]
-
-    gridData.forEach(week => {
-      week.forEach(day => {
-        count++
-        const timestamp = `${monthTable[month]} ${day.split(' ')[1].replace(',', '')}, ${year}`
-        const isToday = dateStamp(new Date().toDateString()) === dateStamp(timestamp)
-        grid.push(<div className={`MonthGridItem ${isToday ? 'IsToday' : ''}`} key={count}>{day.split(' ')[1].replace(',', '')}</div>)
-      })
-    })
-
-    return grid
-
-  }
-
   return (
     <>
       <div className='MonthGridHeader'>
         {['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
           .map((day, i) => <div key={day} className={
-            `MonthGridHeaderItem ${i === showDay && isToday(timestamp) ? 'MonthGridHeaderItemToday' : ''}`
+            `MonthGridHeaderItem ${i === showDay && monthHasToday(timestamp) ? 'MonthGridHeaderItemToday' : ''}`
           }>{day}</div> )}
       </div>
       <div className='MonthGrid'>
@@ -57,4 +30,19 @@ export function MonthGrid() {
       </div>
     </>
   )
+}
+
+function buildGrid(d) {
+  const grid = []
+  const date = new Date(d)
+  const gridData = getMonthGrid(date)
+  let count = 0
+  gridData.forEach(week => {
+    week.forEach(day => {
+      count++
+      const isToday = dateStamp(new Date().toDateString()) === day
+      grid.push(<div className={`MonthGridItem ${isToday ? 'IsToday' : ''}`} key={count}>{day.split(' ')[1].replace(',', '')}</div>)
+    })
+  })
+  return grid
 }
