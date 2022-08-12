@@ -17,7 +17,7 @@
 }
 
 .MonthGridHeaderItem {
-    color: forestgreen;
+    color: var(--default-text-color);
     display: flex;
     justify-content: center;
     align-items: center;

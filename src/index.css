@@ -1,10 +1,11 @@
 :root {
   --left-width: 20rem;
   --main-border-radius: .5rem;
-  --main-background-color: #bbd4b0;
+  /*--main-background-color: #bbd4b0;*/
+  --main-background-color: #3a84aa;
   --header-hight: 2.5rem;
   --month-height: 15.5rem;
-  --default-text-color: forestgreen;
+  --default-text-color: #e8f4fd;
 }
 
 * {
@@ -19,6 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
 code {
