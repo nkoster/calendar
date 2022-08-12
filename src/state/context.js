@@ -1,8 +1,8 @@
 import React, { useReducer, createContext, useContext } from 'react'
 import { StateReducer, initialState } from './reducer'
 
-const StateContext = createContext()
-const StateDispatchContext = createContext()
+const StateContext = createContext(initialState)
+const StateDispatchContext = createContext(null)
 
 export const State = _ => {
   const context = useContext(StateContext)
